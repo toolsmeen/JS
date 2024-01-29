@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Form</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        /* label,input
+        {
+            display: block;
+        } */
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="">Enter your Name</label><br>
+        <input type="text" name="text"><br>
+
+        <label for="">Enter your Email</label><br>
+        <input type="email" name="email"><br>
+
+        <label for="">Enter your Password</label><br>
+        <input type="password" name="password" id="pass"> <i class='bx bxs-hide' id="icon"></i> <br>
+        <br>
+        <button>Submit</button>
+
+
+        <script>
+            let input= document.querySelectorAll("input");
+            let btn = document.querySelector("button");
+            let pass= document.querySelector("#pass");
+            let icon= document.querySelector("#icon")
+            for(let i=0; i<input.length; i++)
+            {
+                input[i].addEventListener("keyup", function()
+                {
+                    this.value=this.value.toUpperCase();
+                })
+            }
+
+            icon.addEventListener("click", function()
+            {
+                if(pass.type=="password")
+                {
+                    pass.type="text";
+                    this.className="bx bxs-show"
+                }
+                else
+                {
+                    pass.type="password";
+                    this.className="bx bxs-hide"
+                }
+
+
+
+            })
+
+        </script>
+    </form>
+</body>
+</html>
